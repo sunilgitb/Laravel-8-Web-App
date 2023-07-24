@@ -1,9 +1,8 @@
-@extends('frontend.layouts.app');
-@include('frontend.layouts.header');
+@extends('frontend.layouts.app')
+@include('frontend.layouts.header')
   <body>
     
      
-
     <section class="banner">
       <div class="banner__shadowtext">Tech<br />Simians</div>
       <div class="banner__text">Smart Sapians on duty</div>
@@ -247,6 +246,159 @@
     <section class="partners">
       <img src="{{asset('frontend/assets/img/partner-logos.png')}}" alt="Partners Logos" />
     </section>
+
+    <h5 class="typing" id="typing"></h5>
+    <style>
+      *,
+*:before,
+*:after {
+  box-sizing: border-box;
+
+
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #fff;
+}
+
+.typing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    color: blue;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 5vw;
+}
+
+#typing::after {
+    content: '|';
+    position: relative;
+    right: 0;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent
+    }
+    50% {
+        color: yellow;
+    }
+}
+    </style>
+  <script>
+  const greeting = ['Welcome To Tech Simians', 'The Best IT Solutions in Mumbai'];
+let currentGreetingIndex = 0;
+let currentCharacterIndex = 0;
+let isDeleting = false;
+let isPaused = false;
+let pauseEnd = 0;
+
+function typeWriterEffect() {
+  const greetingElement = document.getElementById('typing');
+
+  if (isPaused && Date.now() > pauseEnd) {
+    isPaused = false;
+    if (isDeleting) {
+      currentGreetingIndex = (currentGreetingIndex + 1) % greeting.length;
+      isDeleting = false;
+    } else {
+      isDeleting = true;
+    }
+  }
+
+  if (!isPaused && !isDeleting && currentCharacterIndex === greeting[currentGreetingIndex].length) {
+    isPaused = true;
+    pauseEnd = Date.now() + 800; 
+    return setTimeout(typeWriterEffect, 50);
+  }
+
+  if (!isPaused && isDeleting && currentCharacterIndex === 0) {
+    isPaused = true;
+    pauseEnd = Date.now() + 200; 
+    return setTimeout(typeWriterEffect, 50);
+  }
+
+  const timeout = isDeleting ? 100 : 200;
+  greetingElement.innerText = greeting[currentGreetingIndex].substring(0, currentCharacterIndex);
+  currentCharacterIndex = isDeleting ? currentCharacterIndex - 1 : currentCharacterIndex + 1;
+  setTimeout(typeWriterEffect, timeout);
+}
+
+typeWriterEffect();
+
+
+  </script>
+  <!-- <div class="hero-dark typing">
+  <div class="container">
+    <div class="box">
+      <h1 class="box-label">Modernize test automation with AI to</h1>
+      <div class="box-items" id="box-items">
+  <h3 class="box-heading" id="type-heading"></h3><span class="typed-cursor">|</span>
+  <div class="box-item">
+    <span>Release mobile apps faster</span>
+  </div>
+  <div class="box-item">
+    <span>Accelerate authoring</span>
+  </div>
+  <div class="box-item">
+    <span>Build trusted tests</span>
+  </div>
+  <div class="box-item">
+    <span>Stabilize tests</span>
+  </div>
+  <div class="box-item">
+    <span>Scale up quality</span>
+  </div>
+</div>
+
+    
+     
+</div> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var boxItems = document.getElementById('box-items');
+  boxItems.style.display = 'block';
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script>
+  const typedHeading = new Typed('#type-heading', {
+  strings: ['Stabilize', 'Release mobile apps faster', 'Accelerate authoring', 'Build trusted tests', 'Stabilize tests', 'Scale up quality'],
+  typeSpeed: 80,
+  backSpeed: 50,
+  startDelay: 1000,
+  backDelay: 1000,
+  loop: true,
+  loopCount: Infinity,
+  showCursor: true,
+  cursorChar: '|',
+});
+
+</script>
+<style>
+  .typed-cursor {
+  opacity: 1;
+  animation: blink-caret 0.7s infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+</style>
     <section class="whoweare">
       <h2 class="heading">Who we are</h2>
       <p class="subheading">
@@ -680,7 +832,8 @@
         <a href="{{url('contact-us')}}" class="button button--white">Connect</a>
     </section>
     
+  
     
   </body>
 </html>
-@include('frontend.layouts.footer');
+@include('frontend.layouts.footer')

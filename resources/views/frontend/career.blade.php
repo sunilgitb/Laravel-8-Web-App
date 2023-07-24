@@ -1,37 +1,100 @@
-@extends('frontend.layouts.app');
-@include('frontend.layouts.header');
+@extends('frontend.layouts.app')
+@include('frontend.layouts.header')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <body>
-   
-    <main class="container">
-      <section class="breadcrumb">
-        <a href="{{url('/')}}" class="breadcrumb__link">Home</a>
-        <a href="{{url('careers')}}" class="breadcrumb__link">Careers</a>
-      </section>
-      @if ($errors->any())
-   <div class="alert alert-danger">
+  
+  <main class="">
+    <section class="breadcrumb">
+      <a href="{{url('/')}}" class="breadcrumb__link">Home</a>
+      <a href="{{url('careers')}}" class="breadcrumb__link">Careers</a>
+    </section>
+    @if ($errors->any())
+    <div class="alert alert-danger">
       <ul>
          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+         <li>{{ $error }}</li>
          @endforeach
-      </ul>
-   </div>
-@endif
-@if(session('success'))
-    <div id="success-message" class="alert alert-success">
+        </ul>
+      </div>
+      @endif
+      @if(session('success'))
+      <div id="success-message" class="alert alert-success">
         {{ session('success') }}
-    </div>
-@endif
+      </div>
+      @endif
+      
 
 <section>
-<img alt="" class="" src="{{asset('frontend/assets/img/about.jpg')}}">
+  <img class="full-width-img" src="{{asset('frontend/assets/img/techsimians.jpg')}}">
 </section>
- 
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 10p;
+  width: 100%;
+}
 
-    <section class="openings">
+.bg {
+  /* The image used */
+  background-image: url("frontend/assets/img/techsimians.jpg");
+
+  /* Full height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+
+</body>
+</html> -->
+
+
+<style>
+  section {
+    /* Your existing styles for the 'section' element go here */
+  }
+
+  /* Define the CSS class to stretch the image to full width */
+  .full-width-img {
+    width: 100%;
+    margin-left: auto;
+    /* Common styles for all devices go here */
+
+    /* Mobile-specific styles using media query */
+    @media (max-width: 767px) {
+      /* Target devices with a screen width of 767px or smaller (typical mobile devices) */
+      margin-top: 50px; /* Add a margin-top of 50px for mobile devices only */
+    }
+
+    /* Large screen PC-specific styles using media query */
+    @media (min-width: 1200px) {
+      /* Target devices with a screen width of 1200px or larger (large screen PCs) */
+      margin-top: -15px; /* Apply margin-top of -10px for large screen PCs */
+    }
+  } 
+</style>
+
+
+
+
+    
+      <section class="openings">
         <div class="opening__title" style="text-align:center; margin-top:50px;">Job Openings</div>
         <!-- <a class="opening__item" href="{{url('job-openings')}}">
           <div class="opening__item-title">Visual Designer Intern</div>
@@ -40,64 +103,64 @@
           </div> -->
         </a>
       </section>
-  <section class="jobs-list-tags js-filter" style="margin-top:-80px">
+      <section class="jobs-list-tags js-filter" style="margin-top:-80px">
     <div class="container">
       <div class="job-tags-toggle js-filter-group">
         <label class="job-tag-toggle">
           <input checked class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter]">
-          <div class="job-tag-toggle__content">
+          <div class="job-tag-toggle__content"  style="margin-top:50px;">
             <img class="job-tag-toggle__ico" src="{{asset('frontend/assets/img/tag-icon.svg')}}"> All Teams
           </div>
         </label>
         
         <label class="job-tag-toggle">
-  <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=support]">
-      <div class="job-title job-tag-toggle__content" data-job-id="engineering" job-tag-toggle__content">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--engineering"></div> engineering
-          </div>
-        
-        </label>
-        <label class="job-tag-toggle">
-          <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=product]">
-          <div class="job-title job-tag-toggle__content" data-job-id="product">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--product"></div> product
-          </div>
-        </label>
-        <label class="job-tag-toggle">
           <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=support]">
-          <div class="job-title job-tag-toggle__content" data-job-id="support">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--support"></div> support
-          </div>
-        </label>
-        <label class="job-tag-toggle">
-          <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=finance]">
-          <div class="job-title job-tag-toggle__content" data-job-id="finance">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--finance"></div> finance
-          </div>
-        </label>
-        <label class="job-tag-toggle">
-          <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=security]">
-          <div class="job-title job-tag-toggle__content" data-job-id="security">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--security"></div> security
-          </div>
-        </label>
-        <label class="job-tag-toggle">
-          <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=operations]">
-          <div class="job-title job-tag-toggle__content" data-job-id="operations">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--operations"></div> operations
-          </div>
-        </label>
-        <label class="job-tag-toggle">
-          <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=marketing]">
-          <div class="job-title job-tag-toggle__content" data-job-id="marketing">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--marketing"></div> marketing
-          </div>
-        </label>
-        <label class="job-tag-toggle">
-          <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=data]">
-          <div class="job-title job-tag-toggle__content" data-job-id="data">
-            <div class="job-tag-toggle__dot job-tag-toggle__dot--data"></div> data
-          </div>
+          <div class="job-title job-tag-toggle__content" data-job-id="engineering" job-tag-toggle__content">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--engineering"></div>Quality Analyst
+        </div>
+        
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=product]">
+        <div class="job-title job-tag-toggle__content" data-job-id="product">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--product"></div> product
+        </div>
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=support]">
+        <div class="job-title job-tag-toggle__content" data-job-id="support">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--support"></div> support
+        </div>
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=finance]">
+        <div class="job-title job-tag-toggle__content" data-job-id="finance">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--finance"></div> finance
+        </div>
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=security]">
+        <div class="job-title job-tag-toggle__content" data-job-id="security">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--security"></div> security
+        </div>
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=operations]">
+        <div class="job-title job-tag-toggle__content" data-job-id="operations">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--operations"></div> operations
+        </div>
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=marketing]">
+        <div class="job-title job-tag-toggle__content" data-job-id="marketing">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--marketing"></div> marketing
+        </div>
+      </label>
+      <label class="job-tag-toggle">
+        <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=data]">
+        <div class="job-title job-tag-toggle__content" data-job-id="data">
+          <div class="job-tag-toggle__dot job-tag-toggle__dot--data"></div> data
+        </div>
         <!-- </label>
         <label class="job-tag-toggle">
           <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=design]">
@@ -157,54 +220,54 @@
         <!-- Add more job listings here -->
       </div>
     </div>
-  <!-- </section> -->
-  
-  
-
-<script>
-    // Add event listeners to job title elements
-    const jobTitles = document.querySelectorAll('.job-title');
-    jobTitles.forEach((title) => {
-      title.addEventListener('click', showSelectedJob);
-    });
-
-    function showSelectedJob(event) {
-      // Hide all job content sections
-      const jobContents = document.querySelectorAll('.job-content');
-      jobContents.forEach((content) => {
-        content.style.display = 'none';
+    <!-- </section> -->
+    
+    
+    
+    <script>
+      // Add event listeners to job title elements
+      const jobTitles = document.querySelectorAll('.job-title');
+      jobTitles.forEach((title) => {
+        title.addEventListener('click', showSelectedJob);
       });
-
-      // Show the selected job content
-      const selectedJobId = event.target.getAttribute('data-job-id');
-      const selectedJobContent = document.getElementById(selectedJobId);
-      selectedJobContent.style.display = 'block';
-    }
-  </script>
+      
+      function showSelectedJob(event) {
+        // Hide all job content sections
+        const jobContents = document.querySelectorAll('.job-content');
+        jobContents.forEach((content) => {
+          content.style.display = 'none';
+        });
+        
+        // Show the selected job content
+        const selectedJobId = event.target.getAttribute('data-job-id');
+        const selectedJobContent = document.getElementById(selectedJobId);
+        selectedJobContent.style.display = 'block';
+      }
+      </script>
 </body>
 </html>
 
 <style>
-    .card-animation {
-      animation: cardFadeIn 0.7s ease-in-out forwards;
+  .card-animation {
+    animation: cardFadeIn 0.7s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes cardFadeIn {
+    from {
       opacity: 0;
+      transform: translateY(50px);
     }
-
-    @keyframes cardFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-  </style>
+    </style>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  </style>
-  <script>
-    
+</style>
+<script>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
@@ -212,41 +275,84 @@
     $(document).ready(function() {
       $('.card').addClass('card-animation');
     });
+    </script>
   </script>
-  </script>
-
+  
   <!-- Example job content sections -->
-  <section id="engineering" class="job-content">
+ <div class="container">
+ <section id="engineering" class="job-content">
     <div class="card card-animation">
-        <div class="card-body">
-            <h3 class="card-title">Engineering</h3>
-            <p class="card-text">Engineering</p>
-            <p class="card-text">Job Title: Full Stack Developer</p>
-            <p class="card-text">Location: Andheri East</p>
-            <p class="card-text">Job Type: Full-Time</p>
-            <p class="card-text">Job Description: We are seeking a highly skilled Full Stack Developer to join our team. As a Full Stack Developer, you will be responsible for developing and maintaining both the front-end and back-end components of our web applications. You will collaborate with cross-functional teams to design, develop, and deploy scalable and robust software solutions that meet our clients' needs. The ideal candidate is proficient in both front-end and back-end development technologies and has a solid understanding of software development principles.</p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Apply Now
-            </button>
-        </div>
-    </div>
+      <div class="card-body">
+        <!-- <h3 class="card-title">PositionQuality </h3> -->
+        <p class="card-text"><b>Position Vacant: </b> Quality Analyst</p>
+        <p class="card-text"><b>Organization Name: </b> Tech Simians  </p>
+        <p class="card-text"><b>Min. Exp.</b>	1 Year </p>
+        <p class="card-text"><b>Max. Exp.</b>	3 Years </p>
+        <p class="card-text"><b>Qualifications:</b>	Bachelor’s Degree in Computer Science, Software Engineering or any related field</p>
+        <p class="card-text"><b>Location of posting:</b> Worli, Mumbai</p>
+        <p class="card-text"><b>Candidate's Location:</b> Mumbai</p>
+        <!-- <p class="card-text"><b>Job Type:</b> Full-Time</p> -->
+        
+        <p class="card-text"><b>Company Profile:</b> Welcome to our IT service-based company, where technology meets excellence! We are a team of highly skilled and motivated IT professionals dedicated to providing top-notch technology solutions to businesses of all sizes Our mission is to help our clients achieve their technology goals by delivering personalized and innovative solutions that enhance their operations, increase productivity and drive growth.<br>
+        With years of experience in the industry, we have built a reputation for delivering exceptional service and support.
+        Our team stays up-to-date with the latest technologies, trends and methodologies to ensure that we are always providing the most current and effective solutions to our clients. Whether you need help with network security, cloud computing, data backup and recovery, or any other IT-related service, we have the expertise and resources to get the job done right.</p>
+        <p class="">
+          <b>Required Skill Set:</b>
+          
+          <li>Strong knowledge and experience in BFSI domain.</li>
+          <li>Proficiency in LOS (Loan Origination System) and LMS (Loan Management System) software.</li>
+          <li>Excellent analytical and problem-solving skills.</li>
+          <li>Attention to detail and ability to identify errors or inconsistencies.</li>
+          <li>Strong communication skills, both verbal and written.</li>
+        <li>Ability to work independently and collaboratively within a team.</li>
+        <li>Proficiency in using quality assurance tools and methodologies.</li>
+        </>
+      </p>
+      
+      
+      <p class="card-text"><b>Relevant Industry:</b> Banking Financial Service and Insurance Industry 
+      Job Description / Responsibilities</p>
+      <p class="card-text"><b>Job Description / Responsibilities:</b> <li>Conduct thorough quality checks and audits of loan origination and management processes within the BFSI domain.</li>
+      <li>Identify errors, discrepancies, and areas for improvement in loan processing workflows.</li>
+      <li>Develop and implement quality assurance strategies and procedures to enhance overall process efficiency and accuracy.</li>
+      <li>Collaborate with cross-functional teams to address identified issues and implement corrective actions.</li>
+      <li>Generate detailed reports and provide insights on quality metrics and trends.</li>
+    </p>
+    
+    <p class="card-text"><b>Desired profile of the candidate: </b>
+    <li>Minimum 1 years of experience in quality assurance or a similar role within the BFSI domain.</li>
+    <li>Proven experience in working with LOS and LMS software.</li>
+    <li>Strong understanding of loan origination and management processes.</li>
+    <li>Knowledge of regulatory guidelines and compliance requirements in the BFSI sector.</li>
+    <li>Ability to analyse complex data and provide actionable recommendations.</li>
+    <li>Excellent organizational skills and ability to manage multiple tasks simultaneously.</li>
+    <li>Attention to detail and commitment to delivering high-quality work.</li>
+    <li>Team player with excellent interpersonal and communication skills.</li>
+  </p>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Apply Now
+  </button>
+</div>
+</div>
 </section>
+ </div>
 
 
-  </section>
-  <section id="product" class="job-content">
-    <div class="card card-animation">
-        <div class="card-body">
-            <h3 class="card-title">Product</h3>
-            <p class="card-text">Product</p>
-            <h4 class="card-subtitle">Job Summary:</h4>
-            <p class="card-text">We are seeking a highly organized and experienced Human Resources Specialist to join our team. As a Human Resources Specialist, you will be responsible for managing various HR functions, including recruitment, employee onboarding and offboarding, benefits administration, performance management, employee relations, and compliance with employment laws and regulations. Your role will be critical in maintaining a positive work environment and supporting the company's overall strategic objectives.</p>
-            <p class="card-text">Location: Andheri East</p>
-            <p class="card-text">Job Type: Full-Time</p>
-            <h4 class="card-subtitle">Responsibilities:</h4>
-            <h5 class="card-subtitle">Recruitment and Selection:</h5>
-            <p class="card-text">Collaborate with hiring managers to identify staffing needs and develop job descriptions.</p>
-            <p class="card-text">Source, screen, and interview candidates using various recruitment methods.</p>
+</section>
+<div class="container">
+<section id="product" class="job-content">
+  <div class="card card-animation">
+    <div class="card-body">
+      <h3 class="card-title">Product</h3>
+      <p class="card-text">Product</p>
+      <h4 class="card-subtitle">Job Summary:</h4>
+      <p class="card-text">We are seeking a highly organized and experienced Human Resources Specialist to join our team. As a Human Resources Specialist, you will be responsible for managing various HR functions, including recruitment, employee onboarding and offboarding, benefits administration, performance management, employee relations, and compliance with employment laws and regulations. Your role will be critical in maintaining a positive work environment and supporting the company's overall strategic objectives.</p>
+      <p class="card-text">Location: Andheri East</p>
+      <p class="card-text">Job Type: Full-Time</p>
+      <h4 class="card-subtitle">Responsibilities:</h4>
+      <h5 class="card-subtitle">Recruitment and Selection:</h5>
+      <p class="card-text">Collaborate with hiring managers to identify staffing needs and develop job descriptions.</p>
+      <p class="card-text">Source, screen, and interview candidates using various recruitment methods.</p>
             <p class="card-text">Conduct reference checks and coordinate background checks.</p>
             <p class="card-text">Assist in making final hiring decisions and extending job offers.</p>
             <h5 class="card-subtitle">Onboarding and Offboarding:</h5>
@@ -258,37 +364,39 @@
             <p class="card-text">Educate employees on benefits options and assist with inquiries and issue resolution.</p>
             <p class="card-text">Collaborate with benefit providers to ensure accurate and timely administration.</p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Apply Now
+              Apply Now
             </button>
+          </div>
         </div>
-    </div>
-</section>
-
-  </section>
-  <section id="support" class="job-content">
-  <div class="card card-animation">
-    <div class="card-body">
-      <h3 class="card-title">Support</h3>
-      <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      </section>
+      
+    </section>
+    <section id="support" class="job-content">
+      <div class="card card-animation">
+        <div class="card-body">
+          <h3 class="card-title">Support</h3>
+          <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Apply Now
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <section id="finance" class="job-content">
+      <div class="card card-animation">
+        <div class="card-body">
+          <h3 class="card-title">Finance</h3>
+          <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Apply Now
       </button>
     </div>
   </div>
 </section>
+</div>
 
-  <section id="finance" class="job-content">
-  <div class="card card-animation">
-    <div class="card-body">
-      <h3 class="card-title">Finance</h3>
-      <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Apply Now
-      </button>
-    </div>
-  </div>
-</section>
-
+<div class="container">
 <section id="security" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
@@ -300,7 +408,9 @@
     </div>
   </div>
 </section>
+</div>
 
+<div class="container">
 <section id="operations" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
@@ -312,7 +422,9 @@
     </div>
   </div>
 </section>
+</div>
 
+<div class="container">
 <section id="marketing" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
@@ -324,7 +436,9 @@
     </div>
   </div>
 </section>
+</div>
 
+<div class="container">
 <section id="data" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
@@ -336,35 +450,36 @@
     </div>
   </div>
 </section>
+</div>
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benefits and Perks</title>
-  <style>
-    /* Reset default styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
-      color: #333;
-      background-color: #f5f5f5;
-    }
-
-    /* Wrapper */
-    .wrapper {
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits and Perks</title>
+    <style>
+      /* Reset default styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+      
+      /* Wrapper */
+      .wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
-
+    
     /* List Box */
     .list-box {
       background-color: #fff;
@@ -372,26 +487,26 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
-
+    
     /* Inner Content */
     .list-box__inner {
       padding: 40px 20px;
     }
-
+    
     /* Title */
     .list-box__title {
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 20px;
     }
-
+    
     /* Subtitle */
     .list-box__subtitle {
       font-size: 18px;
       margin-bottom: 30px;
       color: #666;
     }
-
+    
     /* Download Link */
     .download-link {
       display: inline-block;
@@ -400,14 +515,14 @@
       text-decoration: none;
       font-weight: bold;
     }
-
+    
     /* Separator Line */
     .list-box__separator {
       height: 1px;
       background-color: #eee;
       margin: 40px 0;
     }
-
+    
     /* Column Layout */
     .list-box__content {
       display: flex;
@@ -419,28 +534,28 @@
       flex-basis: calc(50% - 10px);
       margin-bottom: 20px;
     }
-
+    
     /* List Items */
     .list-box__list {
       list-style: none;
       padding: 0;
     }
-
+    
     .list-box__item {
       margin-bottom: 20px;
     }
-
+    
     .list-box__item-title {
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 5px;
     }
-
+    
     .list-box__item-text {
       font-size: 16px;
       color: #666;
     }
-  </style>
+    </style>
 </head>
 <body>
   <br><br>
@@ -452,12 +567,12 @@
         </h2>
         <div class="list-box__subtitle">Our team is jam packed with creative, smart and bubbly people. We inspire each other to improve daily, and be the best and happiest we can be.</div>
         <!-- <a class="enlarged-link download-link" href="/downloads/
-         Bonuses &amp; Benefits.pdf" target="_blank">
-          Download for more details
-        </a> -->
-      </div>
-      <div class="list-box__separator"></div>
-      <div class="list-box__content">
+        Bonuses &amp; Benefits.pdf" target="_blank">
+        Download for more details
+      </a> -->
+    </div>
+    <div class=""></div>
+    <div class="list-box__content">
         <div class="column">
           <ul class="list-box__list">
             <li class="list-box__item">
@@ -502,26 +617,26 @@
 
 <style>
   .list-box {
-  /* Add your styles for the list box section here */
-}
-.list-box__content {
-      display: flex;
-      position: relative;
-    }
-
-    .column {
-      flex: 1;
-    }
-    .list-box__separator {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      height: 1px;
-      background-color: #ccc;
-      border: none;
-    }
+    /* Add your styles for the list box section here */
+  }
+  .list-box__content {
+    display: flex;
+    position: relative;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  .list-box__separator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+  }
 .list-box__inner {
   /* Add your styles for the list box inner content here */
 }
@@ -568,48 +683,48 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Links Section</title>
-  <style>
-    /* Reset default styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
-      color: #333;
-      background-color: #f5f5f5;
-    }
-
-    /* Links Section */
-    .links {
-      padding: 40px 0;
-      background-color: #f9f9f9;
-    }
-
-    .links-box {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-    }
-
-    .links-box__wrap {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px;
-    }
-
-    .links-box__item {
-      flex-basis: calc(50% - 10px);
-      display: flex;
-      flex-direction: column;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Section</title>
+    <style>
+      /* Reset default styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+      
+      /* Links Section */
+      .links {
+        padding: 40px 0;
+        background-color: #f9f9f9;
+      }
+      
+      .links-box {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .links-box__wrap {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+      }
+      
+      .links-box__item {
+        flex-basis: calc(50% - 10px);
+        display: flex;
+        flex-direction: column;
       align-items: center;
       text-decoration: none;
       color: #333;
@@ -619,11 +734,11 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-
+    
     .links-box__item:hover {
       transform: translateY(-5px);
     }
-
+    
     .links-box__bg {
       position: relative;
       overflow: hidden;
@@ -631,7 +746,7 @@
       height: 0;
       padding-bottom: 60%;
     }
-
+    
     .links-box__img {
       position: absolute;
       top: 0;
@@ -640,23 +755,23 @@
       height: 100%;
       object-fit: cover;
     }
-
+    
     .links-box__content {
       padding: 20px;
       text-align: center;
     }
-
+    
     .links-box__title {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
     }
-
+    
     .links-box__subtitle {
       font-size: 16px;
       color: #666;
     }
-  </style>
+    </style>
 </head>
 <body>
   <section class="links">
@@ -693,8 +808,9 @@
   </section>
 </body>
 </html>
+@include('frontend.layouts.footer')
 
-  <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -1118,5 +1234,5 @@ engineeringRadio.addEventListener('click', function() {
 });
 
 </script>
-  </body>
-  @include('frontend.layouts.footer');
+
+

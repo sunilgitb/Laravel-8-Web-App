@@ -1,5 +1,5 @@
-@extends('frontend.layouts.app');
-@include('frontend.layouts.header');
+@extends('frontend.layouts.app')
+@include('frontend.layouts.header')
 <body>
     
     <main class="container">
@@ -49,7 +49,7 @@
         </div>
       </section>
     </main>
-    @include('frontend.layouts.footer');
+    @include('frontend.layouts.footer')
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

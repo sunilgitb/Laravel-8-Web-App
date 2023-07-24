@@ -1,6 +1,5 @@
-@extends('frontend.layouts.app');
-@include('frontend.layouts.header');
-
+@extends('frontend.layouts.app')
+@include('frontend.layouts.header')
 <body>
    
     <main class="container">
@@ -202,4 +201,4 @@
     </main>
     
   </body>
-  @include('frontend.layouts.footer');
+  @include('frontend.layouts.footer')

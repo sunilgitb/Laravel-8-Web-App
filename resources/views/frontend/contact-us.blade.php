@@ -1,5 +1,5 @@
-@extends('frontend.layouts.app');
-@include('frontend.layouts.header');
+@extends('frontend.layouts.app')
+@include('frontend.layouts.header')
 
 <body>
 @if ($errors->any())
@@ -193,4 +193,4 @@
 }
 
   </style>
-  @include('frontend.layouts.footer');
+  @include('frontend.layouts.footer')

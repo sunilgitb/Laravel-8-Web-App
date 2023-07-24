@@ -1,5 +1,5 @@
-@extends('frontend.layouts.app');
-@include('frontend.layouts.header');
+@extends('frontend.layouts.app')
+@include('frontend.layouts.header')
   <body>
 
 
@@ -598,4 +598,4 @@ h5 {
   </body>
 </html>
 
-@include('frontend.layouts.footer');
+@include('frontend.layouts.footer')
