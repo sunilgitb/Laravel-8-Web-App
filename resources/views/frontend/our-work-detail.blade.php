@@ -22,15 +22,28 @@
             used as a placeholder before the final copy is available.
           </div>
         </div>
-        <section class="project-details js-animated-details" data-parallax-animation="animatedDetails">
+        <section class="project__section">
+
+    <section style="margin-top:-50px;">
+      <img src="{{asset('frontend/assets/img/project-1_1.png')}}" alt="" width= 100%; height=90%; style="margin-top: -82px;" />
+    </section>
+    <!-- <div class="project__grid-item">
+      <img src="{{asset('frontend/assets/img/project-1_2.png')}}" alt="" />
+    </div>
+    <div class="project__grid-item">
+      <img src="{{asset('frontend/assets/img/project-1_3.png')}}" alt="" />
+    </div>
+  </div> -->
+</section>
+<section class="project-details js-animated-details" data-parallax-animation="animatedDetails">
    <div class="image-cover" style="background-image: url('{{asset('frontend/assets/img/atlanta.jpg')}}'); transform: translate3d(0px, -250.873px, 0px); height:70%"></div>
 
   <div class="container is-wide row">
     <div class="location">
       <img src="{{asset('frontend/assets/img/icon-city.svg')}}" alt="City icon" style="margin-top:-150px;">
       <h5 style="margin-top:11px;">Client’s <br> location</h5>
-      <div class="city">Atlanta</div>
-      <div class="region">GA, USA</div>
+      <div class="city">Andheri East</div>
+      <div class="region">Mumbai</div>
     </div>
     <div class="team">
       <img src="{{asset('frontend/assets/img/icon-team.svg')}}" alt="Team icon" style="margin-top:-220px;">
@@ -56,7 +69,7 @@
 </section>
 
 
-<section class="testimonials-list" style="margin-top:-65 px">
+<section class="testimonials-list" style="margin-top:-65 px; width=100%;">
   <div class="container is-wide">
     <div class="project-testimonial">
       <div class="customer">
@@ -77,11 +90,9 @@
 
 
 
-<section class="project__section">
+<!-- <section class="project__section">
   <div class="project__grid">
-    <div class="project__grid-item">
-      <img src="{{asset('frontend/assets/img/project-1_1.png')}}" alt="" />
-    </div>
+ 
     <div class="project__grid-item">
       <img src="{{asset('frontend/assets/img/project-1_2.png')}}" alt="" />
     </div>
@@ -89,7 +100,49 @@
       <img src="{{asset('frontend/assets/img/project-1_3.png')}}" alt="" />
     </div>
   </div>
-</section>
+</section>  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Section</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS to make images 100% width of their columns */
+    .project__grid-item img {
+      width: 130%;
+      height: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="">
+   
+      <div class="row">
+        <div class="col-6">
+          <div class="project__grid-item">
+            <img src="{{asset('frontend/assets/img/project-1_2.png')}}" alt="" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="">
+            <img src="{{asset('frontend/assets/img/project-1_3.png')}}" alt="" />
+          </div>
+        </div>
+      </div>
+    
+  </section>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
 <style>
   .project__section {
   display: flex;
@@ -184,8 +237,9 @@
 </head>
 
 <body>
-  <h1 style="margin-left: 50px;">Project Technologies and Integrations</h1>
   <section class="project-technologies">
+  <h1 style="margin-left: 50px; margin-top: 50px;">Project Technologies and Integrations</h1>
+
     <div class="container">
       <div class="column">
         <div class="item is-technologies">

@@ -7,9 +7,9 @@
 <body>
   
   <main class="">
-    <section class="breadcrumb">
-      <a href="{{url('/')}}" class="breadcrumb__link">Home</a>
-      <a href="{{url('careers')}}" class="breadcrumb__link">Careers</a>
+    <section class="">
+      <a href="{{url('/')}}" class="breadcrumb__link"></a>
+      <a href="{{url('careers')}}" class=""></a>
     </section>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -28,7 +28,7 @@
       
 
 <section>
-  <img class="full-width-img" src="{{asset('frontend/assets/img/techsimians.jpg')}}">
+  <img class="full-width-img" src="{{asset('frontend/assets/img/techsimians_2.jpg')}}">
 </section>
 <!-- 
 <!DOCTYPE html>
@@ -85,7 +85,7 @@ body, html {
     /* Large screen PC-specific styles using media query */
     @media (min-width: 1200px) {
       /* Target devices with a screen width of 1200px or larger (large screen PCs) */
-      margin-top: -15px; /* Apply margin-top of -10px for large screen PCs */
+      margin-top: 70px; /* Apply margin-top of -10px for large screen PCs */
     }
   } 
 </style>
@@ -161,6 +161,8 @@ body, html {
         <div class="job-title job-tag-toggle__content" data-job-id="data">
           <div class="job-tag-toggle__dot job-tag-toggle__dot--data"></div> data
         </div>
+
+        
         <!-- </label>
         <label class="job-tag-toggle">
           <input class="job-tag-toggle__input" name="job-tag-toggle" type="radio" value="[data-filter~=design]">
@@ -217,14 +219,14 @@ body, html {
           <p class="job-description">We are hiring a customer support specialist to assist our customers.</p>
           <p class="job-tags">Customer Service, Troubleshooting, Communication</p>
         </div>
-        <!-- Add more job listings here -->
+        <Add more job listings here -->
       </div>
     </div>
     <!-- </section> -->
     
     
     
-    <script>
+    <!-- <script>
       // Add event listeners to job title elements
       const jobTitles = document.querySelectorAll('.job-title');
       jobTitles.forEach((title) => {
@@ -243,7 +245,7 @@ body, html {
         const selectedJobContent = document.getElementById(selectedJobId);
         selectedJobContent.style.display = 'block';
       }
-      </script>
+      </script> -->
 </body>
 </html>
 
@@ -329,7 +331,7 @@ body, html {
     <li>Attention to detail and commitment to delivering high-quality work.</li>
     <li>Team player with excellent interpersonal and communication skills.</li>
   </p>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
     Apply Now
   </button>
 </div>
@@ -363,74 +365,87 @@ body, html {
             <p class="card-text">Administer employee benefits programs, including health insurance, retirement plans, and other employee perks.</p>
             <p class="card-text">Educate employees on benefits options and assist with inquiries and issue resolution.</p>
             <p class="card-text">Collaborate with benefit providers to ensure accurate and timely administration.</p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
               Apply Now
             </button>
           </div>
         </div>
       </section>
-      
-    </section>
+    <br><br>
     <section id="support" class="job-content">
       <div class="card card-animation">
         <div class="card-body">
           <h3 class="card-title">Support</h3>
           <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
             Apply Now
           </button>
         </div>
       </div>
     </section>
-    
+    <br><br>
     <section id="finance" class="job-content">
       <div class="card card-animation">
         <div class="card-body">
           <h3 class="card-title">Finance</h3>
           <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
         Apply Now
       </button>
     </div>
   </div>
 </section>
 </div>
-
+<br><br>
 <div class="container">
 <section id="security" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
       <h3 class="card-title">Security</h3>
       <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
         Apply Now
       </button>
     </div>
   </div>
 </section>
 </div>
-
+<br><br>
 <div class="container">
 <section id="operations" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
       <h3 class="card-title">Operations</h3>
       <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
         Apply Now
       </button>
     </div>
   </div>
 </section>
 </div>
-
+<br><br>
 <div class="container">
 <section id="marketing" class="job-content">
   <div class="card card-animation">
     <div class="card-body">
       <h3 class="card-title">Marketing</h3>
       <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
+        Apply Now
+      </button>
+    </div>
+  </div>
+</section>
+</div>
+<br><br>
+<div class="container">
+<section id="data" class="job-content">
+  <div class="card card-animation">
+    <div class="card-body">
+      <h3 class="card-title">Data</h3>
+      <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right; background-color: #0047ff;">
         Apply Now
       </button>
     </div>
@@ -438,19 +453,55 @@ body, html {
 </section>
 </div>
 
-<div class="container">
-<section id="data" class="job-content">
-  <div class="card card-animation">
-    <div class="card-body">
-      <h3 class="card-title">Data</h3>
-      <p class="card-text">We're looking for a curious Software Engineer to join our team! The position will include building great products, tackling interesting challenges, and contributing to our engineering culture. We expect you to work in pairs, use test-driven development, be experienced in building complex web applications, and write both clean and maintainable code.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Apply Now
-      </button>
-    </div>
-  </div>
-</section>
-</div>
+
+
+<script>
+  // JavaScript code for job filtering
+document.addEventListener("DOMContentLoaded", function () {
+  const filterRadioInputs = document.querySelectorAll(".job-tag-toggle__input");
+  const jobContentSections = document.querySelectorAll(".job-content");
+
+  function showAllJobDescriptions() {
+    jobContentSections.forEach((section) => {
+      section.style.display = "block";
+    });
+  }
+
+  function hideAllJobDescriptions() {
+    jobContentSections.forEach((section) => {
+      section.style.display = "none";
+    });
+  }
+
+  function showJobDescription(jobId) {
+    jobContentSections.forEach((section) => {
+      if (section.id === jobId) {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    });
+  }
+
+  // Handle filter radio button clicks
+  filterRadioInputs.forEach((input) => {
+    input.addEventListener("change", function () {
+      const value = this.value;
+
+      if (value === "[data-filter]") {
+        showAllJobDescriptions();
+      } else {
+        hideAllJobDescriptions();
+        showJobDescription(value);
+      }
+    });
+  });
+
+  // Show all job descriptions by default
+  showAllJobDescriptions();
+});
+
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -558,8 +609,9 @@ body, html {
     </style>
 </head>
 <body>
+  
   <br><br>
-  <section class="list-box list-box--careers">
+  <section class="list-box list-box--careers" style="margin-top:-55">
     <div class="wrapper">
       <div class="list-box__inner">
         <h2 class="list-box__title">
@@ -681,12 +733,6 @@ body, html {
 
 </style>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links Section</title>
     <style>
       /* Reset default styles */
       * {
@@ -811,7 +857,7 @@ body, html {
 @include('frontend.layouts.footer')
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -871,7 +917,105 @@ body, html {
 
     </div>
   </div>
-</div>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply Form</title>
+  <style>
+    /* Custom CSS to style the "Choose File" button */
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-upload {
+      border: 1px solid #0047ff;
+      color: white;
+      background-color: #0047ff;
+      padding: 6px 12px;
+      cursor: pointer;
+      margin-left: 100px;
+      border-radius: 4px;
+    }
+
+    /* Style for error messages */
+    .text-danger {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your modal code goes here -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kindly fill the form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ route('apply') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
+              @error('name')
+              <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="name">Job Title</label>
+              <input type="text" name="job_title" class="form-control" id="job_title" placeholder="Enter your job title" required>
+              @error('job_title')
+              <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+              @error('email')
+              <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter your phone number" maxlength="10" required>
+              @error('phone')
+              <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="file">File</label>
+              <!-- Custom "Choose File" button -->
+              <label for="file" class="custom-file-upload">Choose File</label>
+              <input type="file" name="file" id="file" accept=".pdf, .doc, .docx, .jpeg, .jpg, .png" required>
+              @error('file')
+              <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" name="message" id="message" rows="2" cols="2" placeholder="Enter your message" required></textarea>
+              @error('message')
+              <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #0047ff;">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
 <!-- Button trigger modal -->
 
 <!-- Modal -->

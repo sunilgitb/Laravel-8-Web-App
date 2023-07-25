@@ -80,7 +80,7 @@
             // Hide the success message after 2 seconds
             setTimeout(function() {
                 successMessage.style.display = 'none';
-            }, 2000);
+            }, 3000);
         }
     });
 </script>
